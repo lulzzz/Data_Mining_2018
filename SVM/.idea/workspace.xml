@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5d87085f-bc5e-4461-a278-5d5d9db0cfb2" name="Default" comment="" />
+    <list default="true" id="067ac347-aabe-4ac3-9d00-8637898cb819" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -11,8 +11,8 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="ACO-MMAS.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/ACO-MMAS.py">
+      <file leaf-file-name="SVM.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/SVM.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -33,7 +33,7 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/ACO-MMAS.py" />
+        <option value="$PROJECT_DIR$/SVM.py" />
       </list>
     </option>
   </component>
@@ -62,20 +62,20 @@
         <subPane>
           <expand>
             <path>
-              <item name="ACO" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ACO" type="462c0819:PsiDirectoryNode" />
+              <item name="SVM" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SVM" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../SVM" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -97,11 +97,11 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="5d87085f-bc5e-4461-a278-5d5d9db0cfb2" name="Default" comment="" />
-      <created>1518002651210</created>
+      <changelist id="067ac347-aabe-4ac3-9d00-8637898cb819" name="Default" comment="" />
+      <created>1518003178613</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1518002651210</updated>
+      <updated>1518003178613</updated>
     </task>
     <servers />
   </component>
@@ -136,7 +136,7 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/ACO-MMAS.py">
+    <entry file="file://$PROJECT_DIR$/SVM.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
