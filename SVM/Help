@@ -1,0 +1,5 @@
+objective of this assignment
+---------------------------------
+1. Learn how to implement SVM model and use sklearn library.
+2. Compare different SVM models for 3 different split ratios.
+3. find out the best SVM model for above-mentioned criteria in no.2.
