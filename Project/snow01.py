@@ -35,7 +35,7 @@ def main(argv):
     f = open(infile)
 
     line = f.readline()  # Read (scip) the header - one line
-
+    #print(line)
     stps = 0
 
     # Model parameters. Default values are set, but is also read from textfile
@@ -52,11 +52,11 @@ def main(argv):
         line = f.readline()
 
         if len(line) > 1:
-            cols = line.split()
+            cols = line.split() #column 
             date = cols[0]
-            prcp = float(cols[1])
-            airt = float(cols[2])
-            swe_obs = float(cols[3])
+            prcp = float(cols[1]) #precipation
+            airt = float(cols[2]) #air temperature
+            swe_obs = float(cols[3]) #SnowWaterEquivalent observations
 
             # This is the super simple SNOW model
             if airt < threshRainSnow:
