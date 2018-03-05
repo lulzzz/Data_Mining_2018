@@ -1,0 +1,4 @@
+1. select only norwegian cities from worldcitiespop.txt were selected and duplicates were removed and read them and split them for each city.
+2. create nodes by using city.
+3. create edges
+4. use MMAS algorithm
