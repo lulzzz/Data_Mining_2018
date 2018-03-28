@@ -9,6 +9,7 @@ warnings.simplefilter("ignore")
 training = [[int(i) for i in i.split(",")] for i in open("pendigits.tra").readlines() if i.strip()]
 testing = [[int(i) for i in i.split(",")] for i in open("pendigits.tes").readlines() if i.strip()]
 
+#split training and test data
 training_0 = [i[:-1] for i in training if i[-1] == 0]
 training_1 = [i[:-1] for i in training if i[-1] == 1]
 
@@ -37,6 +38,7 @@ for d in training_1:
     training_2d_1 += mapTo2D(d)
 
 # Plotting 2d
+
 plt.subplot(2, 2, 1)
 plt.plot([i[0] for i in training_2d_0], [i[1] for i in training_2d_0], "-o", color="green")
 
@@ -50,21 +52,23 @@ plt.subplot(2, 2, 4)
 plt.plot([i[0] for i in training_2d_1][:8], [i[1] for i in training_2d_1][:8], "-o", color="green")
 plt.show()
 
+#create x and y axis
 X = np.array(training_2d_0[:8] + training_2d_1[:8])
 Y = np.array([0 for i in training_2d_0[:8]] + [1 for i in training_2d_1[:8]])
 
-C = 1.0
-gamma = 0.5
+#use soft margin C
+C = 1.0 #learning rate
+gamma = 0.5  #learning rate
+#create different functions of svm
 svm_linear = svm.SVC(kernel='linear', C=C, gamma=gamma).fit(X, Y)
 svm_rbf = svm.SVC(kernel='rbf', C=C, gamma=gamma).fit(X, Y)
 svm_sigmoid = svm.SVC(kernel='sigmoid', C=C, gamma=gamma).fit(X, Y)
-
+#svm_gaussian = svm.SVC(kernel='gaussian',C=C, gamma = gamma).fit(X, Y)
 h = 0.2  # Mesh step
 x_min, x_max = X[:, 0].min() - 1, X[:, 0].max() + 1
-y_min, y_max = X[:, 1].min() - 1, X[:, 1].max() + 1
+y_min, y_max = X[:, 1].min() - 1, X[:, 1].max() + 1   #
 xx, yy = np.meshgrid(np.arange(x_min, x_max, h),
                      np.arange(y_min, y_max, h))
-
 
 def plotSVM(svm, n, title):
     plt.subplot(2, 2, n)
@@ -75,10 +79,12 @@ def plotSVM(svm, n, title):
     plt.scatter(X[:, 0], X[:, 1], c=Y, cmap=plt.cm.Paired)
     plt.title(title)
 
-
+#3 models: Liner, RBF, Sigmoid
+#svm_model, number, "title"
 plotSVM(svm_linear, 1, "Linear")
 plotSVM(svm_rbf, 2, "RBF")
 plotSVM(svm_sigmoid, 3, "Sigmoid")
+#plotSVM(svm_gaussian, 4, "Gaussian")
 
 plt.show()
 
@@ -92,29 +98,34 @@ for d in testing_1:
 
 
 def testSVM(svm, zero, one):
-    numcorrect = 0.
-    numwrong = 0.
+    numcorrect = 0
+    numwrong = 0
     for correct, testing in ((0, zero), (1, one)):
         for d in testing:
-            r = svm.predict(d)[0]
+            #print(d)
+            r = svm.predict(np.reshape(d,(1,-1)))[0]
+            #print(r)
             if (r == correct):
                 numcorrect += 1
             else:
                 numwrong += 1
     print("Correct", numcorrect)
     print("Wrong", numwrong)
-    print("Accuracy", (numcorrect) / (numcorrect + numwrong))
-
+    print("Accuracy", (numcorrect)/(numcorrect + numwrong))
 
 
 print("Linear")
 testSVM(svm_linear, testing_2d_0, testing_2d_1)
-
+print('-------------------------------- '*2)
+print('-------------------------------- '*2)
 print("RBF")
 testSVM(svm_rbf, testing_2d_0, testing_2d_1)
-
-print("Sigmoid")
+print('-------------------------------- '*2)
+print('-------------------------------- '*2)
+print ("Sigmoid")
 testSVM(svm_sigmoid, testing_2d_0, testing_2d_1)
+print('-------------------------------- '*2)
+print('-------------------------------- '*2)
 
 # 16d data
 X = np.array(training_0 + training_1)
@@ -125,14 +136,19 @@ svm_poly = svm.SVC(kernel='poly', C=C, gamma=gamma).fit(X, Y)
 svm_rbf = svm.SVC(kernel='rbf', C=C, gamma=gamma).fit(X, Y)
 svm_sigmoid = svm.SVC(kernel='sigmoid', C=C, gamma=gamma).fit(X, Y)
 
+print("16d data")
+print('-------------------------------- '*2)
 print("Linear")
 testSVM(svm_linear, testing_0, testing_1)
-
+print('-------------------------------- '*2)
+print('-------------------------------- '*2)
 print("Polinomial")
 testSVM(svm_poly, testing_0, testing_1)
-
+print('-------------------------------- '*2)
+print('-------------------------------- '*2)
 print("RBF")
 testSVM(svm_rbf, testing_0, testing_1)
-
+print('-------------------------------- '*2)
+print('-------------------------------- '*2)
 print("Sigmoid")
 testSVM(svm_sigmoid, testing_0, testing_1)

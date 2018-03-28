@@ -87,7 +87,7 @@ class Greedy:
         currentEdge = None
         while (not checkAllNodesPresent(self.visitedEdges)):
             possibleEdges = sorted([(edge.cost, edge) for edge in currentNode.edges if edge.toNode not in self.visitedNodes],key=lambda x: x[0])
-            #possibleEdges = [(edge.cost, edge) for edge in currentNode.edges if edge.toNode not in self.visitedNodes]
+            #possibleEdges = [(edge.cost, edge) for edge in currentNode.edges if edge.toNode not in self.visitedNodes] #fungerer ikke på python 3
             #possibleEdges.sort()
             # import pdb;pdb.set_trace()
             currentEdge = possibleEdges[0][1]
